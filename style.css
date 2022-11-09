@@ -96,7 +96,8 @@ html::-webkit-scrollbar-thumb {
 .nav {
     background-color: var(--color-backGround);
     width: 5rem;
-    height: 30rem;
+    /* height: 30rem; */
+    padding: 2rem 1rem 2rem 1.5rem;
     z-index: 10;
     position: fixed;
     top: 25%;
@@ -115,6 +116,7 @@ html::-webkit-scrollbar-thumb {
     align-items: center;
     gap: 2rem;
     width: 100%;
+    overflow: hidden;
 }
 
 .dashBoard ul a {
@@ -123,17 +125,30 @@ html::-webkit-scrollbar-thumb {
     justify-content: center;
     color: white;
     width: 100%;
+    overflow: hidden;
+    transition: all 200ms ease;
+    padding: .25rem .75rem;
+}
+
+.dashBoard ul a.active{
+    background-color: white;
+    border-radius: 50%;
+}
+
+.activeIcons{
+    color: black;
 }
 
 .icons {
     height: 3rem;
     font-size: 2rem;
-    transition: all 500ms ease;
+    transition: all 300ms ease-in-out;
+    overflow: hidden;
     width: 100%;
 }
 
 .dashBoard ul a:hover .icons {
-    transform: translateX(1rem);
+    transform: scale(1.2);
 }
 
 
@@ -967,12 +982,118 @@ html::-webkit-scrollbar-thumb {
 
 
 
+/* =================================== Contact ========================= */
+.contact_container{
+    background-color: var(--color-backGround);
+    height: 90vh;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    padding: 3rem 1rem 2rem 5rem;
+    position: relative;
+    overflow: hidden;
+}
 
+.video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.85;
+    z-index: 1;
+}
 
+.contact_first{
+    color: white;
+    line-height: 7rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 100;
+}
 
+.contact_first .top h3{
+    font-size: 2.5rem;
+    font-weight: 400;
+}
 
+.contact_first .bottom{
+    overflow: hidden;
+    display: flex;
+    gap: 5rem;
+}
 
+.contact_first .bottom a{
+    font-size: 2rem;
+    color: white;
+    /* font-weight: 200; */
+} 
 
+.contact_first h2{
+    font-size: 5rem;
+}
+
+.contact_first h3{
+    font-size: 4rem;
+    font-weight: 100;
+}
+
+.contact_box{
+    position: absolute;
+    right: 10rem;
+    width: 45%;
+    z-index: 100;
+}
+
+.contact_item_box{
+    z-index: 100;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 20rem));
+    justify-content: center;
+    gap: 3rem;
+    overflow: hidden;
+    padding: 2rem;
+}
+
+.contact_item{
+    background-color: var(--color-white-variant);
+    padding: 3rem 1rem 2rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    line-height: 3rem;
+    transition: all 300ms ease-in;
+}
+
+.contact_item:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.contact_item:hover i, .contact_item:hover h2,.contact_item:hover h3{
+    transform: scale(1.1);
+}
+
+.contact_item i{
+    font-size: 3rem;
+    overflow: hidden;
+    transition: all 300ms ease-in;
+}
+
+.contact_item h3{
+    font-size: 1.5rem;
+    transition: all 300ms ease-in-out;
+}
+
+.contact_item h2{
+    transition: all 300ms ease-in-out;
+}
 
 
 
@@ -1080,9 +1201,10 @@ html::-webkit-scrollbar-thumb {
 
     .nav {
         bottom: 0;
-        top: 95%;
+        top: 92%;
         width: 100%;
         height: 5rem;
+        padding: 0;
     }
 
     .dashBoard {
@@ -1183,6 +1305,7 @@ html::-webkit-scrollbar-thumb {
 
     .about_info p {
         line-height: 3rem;
+        padding: 2rem;
     }
 
     .diamond {
@@ -1202,8 +1325,12 @@ html::-webkit-scrollbar-thumb {
         font-size: 60%;
     }
 
+    .nav{
+        top: 93%;
+    }
+
     .heading-highlight {
-        font-size: 3rem;
+        font-size: 6rem;
     }
 
     .home_img {

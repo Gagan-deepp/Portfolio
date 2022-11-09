@@ -1,5 +1,18 @@
 console.log("Its Done")
 
+// ================= NAvBar =======================
+let navIcons = document.querySelectorAll('.icons');
+navIcons.forEach((e)=>{
+    e.addEventListener("click",()=>{
+        if (!e.parentNode.classList.contains("active")) {
+            document.querySelector('.navUL a.active').classList.remove("active");
+            document.querySelector('.activeIcons').classList.remove("activeIcons");
+            e.classList.add('activeIcons');
+            e.parentNode.classList.add('active')
+        }
+    })
+})
+
 document.addEventListener("click", (e) => {
     if (e.target.classList.contains("portfolio-btn") || e.target.classList.contains("popup")) {
         togglePopup();
@@ -85,6 +98,9 @@ ScrollReveal().reveal('.line', { delay: 100, origin: 'left' });
 ScrollReveal().reveal('.info #info-sub-head', { delay: 500, origin: 'left' });
 ScrollReveal().reveal('.info_icons a , .about-box .about-card', { delay: 200, origin: 'bottom', interval: 200 });
 ScrollReveal().reveal('.button .btn', { delay: 500, origin: 'bottom', interval: 200 });
+ScrollReveal().reveal('.contact_first .top h3', { delay: 300, origin: 'left' ,interval: 200});
+ScrollReveal().reveal('.contact_first .mid h2 , .contact_first .mid h3', { delay: 400, origin: 'left', interval: 200 });
+ScrollReveal().reveal('.contact_first .bottom .contact_icon', { delay: 300, origin: 'bottom',interval: 200 });
 
 ScrollReveal().reveal('.home_img img , .about_img img', {
     delay: 100, origin: 'left', interval: 200, rotate: {
